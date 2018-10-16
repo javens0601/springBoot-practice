@@ -22,4 +22,13 @@ public class myException {
         errorMap.put("errorMsg", ex.getMessage());
         return errorMap;
     }
+
+    @ResponseBody
+    @ExceptionHandler(value = BusinessException.class)
+    public Map<String, Object> errorHandle(BusinessException ex) {
+        Map<String, Object> errorMap = new HashMap<String, Object>();
+        errorMap.put("errorCode", ex.getErrorCode());
+        errorMap.put("errorMsg", ex.getErrorMsg());
+        return errorMap;
+    }
 }
