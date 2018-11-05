@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
+    request.setCharacterEncoding("utf-8");//解决post请求中文乱码问题
     String username = request.getParameter("user");
     String password = request.getParameter("passwd");
     if ("admin".equals(username) && "admin123".equals(password)) {
